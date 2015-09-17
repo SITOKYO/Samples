@@ -19,6 +19,6 @@ public class EmployeeFactory {
         } else if (type.equals("一般職")){
             return new General();
         }
-        return null;
+        return new General();  // デフォルトは一般職
     }
 }
