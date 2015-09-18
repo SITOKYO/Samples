@@ -11,14 +11,16 @@ package polymorphismSample.after;
  */
 public class EmployeeFactory {
     
-    public Employee getEmployeeInstanse(String type){
+    public static Employee getEmployeeInstanse(String type) throws Exception{
         if (type.equals("役員")){
             return new Executive();
         } else if (type.equals("管理職")){
             return new Manager();
         } else if (type.equals("一般職")){
             return new General();
+        } else {
+            throw new Exception("従業員の種類の指定がありません");
         }
-        return null;
+ 
     }
 }
