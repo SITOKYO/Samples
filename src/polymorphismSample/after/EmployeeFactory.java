@@ -21,6 +21,5 @@ public class EmployeeFactory {
         } else {
             throw new Exception("従業員の種類の指定がありません");
         }
- 
     }
 }
