@@ -5,9 +5,6 @@
  */
 package polymorphismSample.before;
 
-import java.util.List;
-import java.util.Map;
-
 /**
  * 給与クラス
  * @author kinoshita_h
@@ -17,8 +14,8 @@ public class Payroll {
     
     /**
      * 給料を取得する
-     * @param type
-     * @return
+     * @param type 役職
+     * @return 給料
      */
     public int getSalary(String type){
         int salary = 0;
@@ -34,8 +31,9 @@ public class Payroll {
 
     /**
      * 役職手当を取得する
-     * @param type
-     * @return
+     * @param type 役職
+     * @param baseAmount 基準額 
+     * @return 役職手当
      */
     public int getPositionAllowance(String type, int baseAmount){
         int positionAllowance = 0;
@@ -49,8 +47,10 @@ public class Payroll {
     
     /**
      * 時間外手当を取得する
-     * @param type
-     * @return
+     * @param type 役職
+     * @param overtime 残業時間
+     * @param baseAmount 基準額 
+     * @return 時間外手当
      */
     public int getOvertimeAllowance(String type, int overtime, int baseAmount){
         int overtimeAllowance = 0;

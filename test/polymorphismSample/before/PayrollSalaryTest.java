@@ -20,28 +20,6 @@ import static org.junit.Assert.*;
  */
 public class PayrollSalaryTest {
     
-    public PayrollSalaryTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
      @Test
      public void getSalary役員() {
          polymorphismSample.before.Payroll payroll = new polymorphismSample.before.Payroll();
