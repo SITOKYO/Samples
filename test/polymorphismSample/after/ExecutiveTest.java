@@ -18,19 +18,19 @@ public class ExecutiveTest {
      private final String type = "役員";
     
      @Test
-     public void getSalary() throws Exception {
+     public void getSalaryで給料を正常取得() throws Exception {
          Employee employee = EmployeeFactory.getEmployeeInstanse(type);
          assertThat(employee.getSalary(), is(10000000));
      }
      
      @Test
-     public void get役職手当() throws Exception {
+     public void getPositionAllowanceで役職手当を正常取得() throws Exception {
          Employee employee = EmployeeFactory.getEmployeeInstanse(type);
          assertThat(employee.getPositionAllowance(2000000), is(200000));
      }
      
      @Test
-     public void get時間外手当() throws Exception {
+     public void getOvertimeAllowanceで時間外手当を正常取得() throws Exception {
          Employee employee = EmployeeFactory.getEmployeeInstanse(type);
          assertThat(employee.getOvertimeAllowance(30, 300000),is(0));
      }
