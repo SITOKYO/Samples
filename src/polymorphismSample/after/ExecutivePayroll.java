@@ -1,15 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package polymorphismSample.after;
 
 /**
- * 役員クラス
+ * 役員給与クラス
  * @author kinoshita_h
  */
-public class Executive implements Employee{
+public class ExecutivePayroll implements EmployeePayroll{
 
     @Override
     public int getSalary() {
