@@ -1,8 +1,5 @@
 package polymorphismSample.after;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  * 従業員給与生成クラス
  * @author kinoshita_h
@@ -12,9 +9,11 @@ public class EmployeePayrollFactory {
     public static EmployeePayroll getEmployeePayrollInstanse(String className) throws Exception {
         EmployeePayroll employeePayroll = null;
         
-        try {          
-            employeePayroll = (EmployeePayroll)Class.forName("polymorphismSample.after." + className).newInstance();
+        try {
+            final String fullyQualifiedClassName = EmployeePayrollFactory.class.getPackage().getName() + "." + className;
+            employeePayroll = (EmployeePayroll)Class.forName(fullyQualifiedClassName).newInstance();
         } catch (ClassNotFoundException ex) {
+            // 注意：生成対象のクラスは当クラスと同パッケージに存在する必要があります。
             System.err.println("クラスの指定が正しくありません");
             throw ex;
         } catch (Exception e) {

@@ -7,10 +7,6 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
-/**
- *
- * @author kinoshita_h
- */
 @RunWith(Suite.class)
 @Suite.SuiteClasses(
     {
