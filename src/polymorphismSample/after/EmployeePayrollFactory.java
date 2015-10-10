@@ -14,14 +14,12 @@ public class EmployeePayrollFactory {
         
         try {          
             employeePayroll = (EmployeePayroll)Class.forName("polymorphismSample.after." + className).newInstance();
+        } catch (ClassNotFoundException ex) {
+            System.err.println("クラスの指定が正しくありません");
+            throw ex;
         } catch (Exception e) {
-            if (e instanceof ClassNotFoundException) {
-                System.err.println("クラスの指定が正しくありません");
-                throw (ClassNotFoundException)e;
-            } else {
-                System.err.println("その他エラー");
-                throw (Exception)e;
-            }
+            System.err.println("その他エラー");
+            throw e;
         }
 
         return employeePayroll;    
