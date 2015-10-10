@@ -10,23 +10,23 @@ import static org.junit.Assert.*;
  */
 public class GeneralPayrollTest {
  
-     private final String type = "一般職";
+     private final String className = "GeneralPayroll";
     
      @Test
      public void getSalaryで給料を正常取得() throws Exception {
-         EmployeePayroll employee = EmployeePayrollFactory.getEmployeePayrollInstanse(type);
+         EmployeePayroll employee = EmployeePayrollFactory.getEmployeePayrollInstanse(className);
          assertThat(employee.getSalary(), is(2500000));
      }
      
      @Test
      public void getPositionAllowanceで役職手当を正常取得() throws Exception {
-         EmployeePayroll employee = EmployeePayrollFactory.getEmployeePayrollInstanse(type);
+         EmployeePayroll employee = EmployeePayrollFactory.getEmployeePayrollInstanse(className);
          assertThat(employee.getPositionAllowance(3333333), is(0));
      }
      
      @Test
      public void getOvertimeAllowanceで時間外手当を正常取得() throws Exception {
-         EmployeePayroll employee = EmployeePayrollFactory.getEmployeePayrollInstanse(type);
+         EmployeePayroll employee = EmployeePayrollFactory.getEmployeePayrollInstanse(className);
          assertThat(employee.getOvertimeAllowance(30, 300000), is(14062));
      }
      

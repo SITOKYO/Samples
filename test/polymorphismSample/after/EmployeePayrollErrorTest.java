@@ -8,10 +8,10 @@ import org.junit.Test;
  */
 public class EmployeePayrollErrorTest {
     
-     private final String type = "不正な役職名";
+     private final String className = "InvalidClassName";
     
-     @Test(expected = Exception.class)
+     @Test(expected = ClassNotFoundException.class)
      public void get不正な役職名で給料を取得するとException() throws Exception {
-         EmployeePayroll employee = EmployeePayrollFactory.getEmployeePayrollInstanse(type);
+         EmployeePayroll employee = EmployeePayrollFactory.getEmployeePayrollInstanse(className);
      }
 }
