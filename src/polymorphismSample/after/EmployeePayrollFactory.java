@@ -6,6 +6,9 @@ package polymorphismSample.after;
  */
 public class EmployeePayrollFactory {
     
+    private EmployeePayrollFactory(){
+    }
+    
     public static EmployeePayroll getEmployeePayrollInstanse(String className) throws Exception {
         EmployeePayroll employeePayroll = null;
         
