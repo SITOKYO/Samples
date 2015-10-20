@@ -5,20 +5,40 @@ package polymorphismSample.after;
  * @author kinoshita_h
  */
 public class GeneralPayroll implements EmployeePayroll{
-
-    @Override
-    public int getSalary() {
-        return 2500000;
-    }
-
-    @Override
-    public int getPositionAllowance(int baseAmount) {
-        return 0;
-    }
-
-    @Override
-    public int getOvertimeAllowance(int overtime, int baseAmount) {
-        return (int)(baseAmount/160 * 0.25 * overtime);
+    private int salary = 0;
+    private int positionAllowance = 0;
+    private int overtimeAllowance = 0;
+    
+    public GeneralPayroll(){
+        calculationSalary();
     }
     
+    @Override
+    public int getSalary() {
+        return salary;
+    }
+
+    @Override
+    public int getPositionAllowance() {
+        calculationPositionAllowance();
+        return positionAllowance;
+    }
+
+    @Override
+    public int getOvertimeAllowance(int overtime) {
+        calculationOvertimeAllowance(overtime);
+        return overtimeAllowance;
+    }
+    
+    private void calculationSalary() {
+        salary = 2500000;
+    }
+    
+    private void calculationPositionAllowance() {
+        positionAllowance = 0;
+    }
+    
+    private void calculationOvertimeAllowance(int overtime) {
+        overtimeAllowance = (int)(salary/160 * 0.25 * overtime);
+    }
 }

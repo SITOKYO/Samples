@@ -6,19 +6,40 @@ package polymorphismSample.after;
  */
 public class ExecutivePayroll implements EmployeePayroll{
 
-    @Override
-    public int getSalary() {
-        return 10000000;
-    }
-
-    @Override
-    public int getPositionAllowance(int baseAmount) {
-        return (int)(baseAmount * 0.1);
-    }
-
-    @Override
-    public int getOvertimeAllowance(int overtime, int baseAmount) {
-        return 0;
+    private int salary = 0;
+    private int positionAllowance = 0;
+    private int overtimeAllowance = 0;
+    
+    public ExecutivePayroll(){
+        calculationSalary();
     }
     
+    @Override
+    public int getSalary() {
+        return salary;
+    }
+
+    @Override
+    public int getPositionAllowance() {
+        calculationPositionAllowance();
+        return positionAllowance;
+    }
+
+    @Override
+    public int getOvertimeAllowance(int overtime) {
+        calculationOvertimeAllowance(overtime);
+        return overtimeAllowance;
+    }
+    
+    private void calculationSalary() {
+        salary = 10000000;
+    }
+    
+    private void calculationPositionAllowance() {
+        positionAllowance = (int)(salary * 0.1);
+    }
+    
+    private void calculationOvertimeAllowance(int overtime) {
+        overtimeAllowance = 0;
+    }
 }

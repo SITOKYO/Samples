@@ -21,13 +21,13 @@ public class GeneralPayrollTest {
      @Test
      public void getPositionAllowanceで役職手当を正常取得() throws Exception {
          EmployeePayroll employee = EmployeePayrollFactory.getEmployeePayrollInstanse(className);
-         assertThat(employee.getPositionAllowance(3333333), is(0));
+         assertThat(employee.getPositionAllowance(), is(0));
      }
      
      @Test
      public void getOvertimeAllowanceで時間外手当を正常取得() throws Exception {
          EmployeePayroll employee = EmployeePayrollFactory.getEmployeePayrollInstanse(className);
-         assertThat(employee.getOvertimeAllowance(30, 300000), is(14062));
+         assertThat(employee.getOvertimeAllowance(30), is(117187));
      }
      
 }
