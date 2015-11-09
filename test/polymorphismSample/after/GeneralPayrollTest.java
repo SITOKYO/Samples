@@ -13,19 +13,20 @@ public class GeneralPayrollTest {
      private final String className = "GeneralPayroll";
     
      @Test
-     public void getSalaryで給料を正常取得() throws Exception {
+     public void 一般職の給料は一律2500000返される() throws Exception {
          EmployeePayroll employee = EmployeePayrollFactory.getEmployeePayrollInstanse(className);
          assertThat(employee.getSalary(), is(2500000));
      }
      
      @Test
-     public void getPositionAllowanceで役職手当を正常取得() throws Exception {
+     public void 一般職の役職手当は一律0返される() throws Exception {
          EmployeePayroll employee = EmployeePayrollFactory.getEmployeePayrollInstanse(className);
          assertThat(employee.getPositionAllowance(), is(0));
      }
      
      @Test
-     public void getOvertimeAllowanceで時間外手当を正常取得() throws Exception {
+     public void 一般職の時間外手当は指定の計算式により計算される() throws Exception {
+         // 計算式：給料/160 * 0.25 * 残業時間
          EmployeePayroll employee = EmployeePayrollFactory.getEmployeePayrollInstanse(className);
          assertThat(employee.getOvertimeAllowance(30), is(117187));
      }
