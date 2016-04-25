@@ -21,14 +21,12 @@ public class ExecutivePayroll implements EmployeePayroll{
 
     @Override
     public int getPositionAllowance() {
-        calculationSalary();
         calculationPositionAllowance();
         return positionAllowance;
     }
 
     @Override
     public int getOvertimeAllowance(int overtime) {
-        calculationSalary();
         calculationOvertimeAllowance(overtime);
         return overtimeAllowance;
     }
