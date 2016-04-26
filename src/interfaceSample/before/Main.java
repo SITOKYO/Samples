@@ -5,13 +5,13 @@ package interfaceSample.before;
  */
 public class Main {
     public static void main(String... args){
-        //書類作成者作成
+        //書類作成者オブジェクトを生成
         DocumentMaker documentMaker = new DocumentMaker();
-        //ボールペンとしてボールペンを作成
+        //ボールペンとしてボールペンオブジェクトを生成
         BallpointPen ballpointPen = new BallpointPen();
-        //万年筆として万年筆を作成
+        //万年筆として万年筆オブジェクトを生成
         FountainPen fountainPen = new FountainPen();
-        //シャープペンシルとしてシャープペンシルを作成
+        //シャープペンシルとしてシャープペンシルオブジェクトを生成
         MechanicalPencil mechanicalPencil = new MechanicalPencil();
         
         //ボールペンで書類を作成
