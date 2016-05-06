@@ -1,8 +1,9 @@
 package interfaceSample.after;
 
 /**
- *書ける物インタフェース
+ *筆記用具インタフェース
  */
 public interface Writable {
+    // 筆記用具は必ず「書く(write)」という機能を持つ
     public void write();
 }
